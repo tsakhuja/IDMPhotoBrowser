@@ -593,7 +593,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
         _doneButton.layer.borderWidth = 1.0f;
     }
     else {
-        [_doneButton setBackgroundImage:_doneButtonImage forState:UIControlStateNormal];
+        [_doneButton setImage:_doneButtonImage forState:UIControlStateNormal];
         _doneButton.contentMode = UIViewContentModeScaleAspectFit;
     }
     
@@ -1073,12 +1073,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 }
 
 - (CGRect)frameForDoneButtonAtOrientation:(UIInterfaceOrientation)orientation {
-    CGRect screenBound = self.view.bounds;
-    CGFloat screenWidth = screenBound.size.width;
-    
-    // if ([self isLandscape:orientation]) screenWidth = screenBound.size.height;
-    
-    return CGRectMake(screenWidth - 75, 30, 55, 26);
+    return CGRectMake(75, 30, 55, 26);
 }
 
 - (CGRect)frameForCaptionView:(IDMCaptionView *)captionView atIndex:(NSUInteger)index {
