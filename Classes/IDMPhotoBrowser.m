@@ -547,8 +547,10 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 
 - (void)viewDidLoad {
     // Transition animation
-    [self performPresentAnimation];
-    
+    if (_senderViewForAnimation || _scaleImage) {
+        [self performPresentAnimation];
+    }
+
     // View
 	self.view.backgroundColor = [UIColor colorWithWhite:(_useWhiteBackgroundColor ? 1 : 0) alpha:1];
     
